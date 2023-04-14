@@ -3,16 +3,19 @@ import openai
 from slack_bolt.adapter.socket_mode import SocketModeHandler
 from slack import WebClient
 from slack_bolt import App
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # NEEDED Environment Variables 
-openai_api_key = os.environ['OPENAI_API_KEY']
-slack_app_token = os.environ['SLACK_BOT_APP_TOKEN']
-slack_bot_token = os.environ['SLACK_API_KEY']
+openai_api_key = os.getenv('OPENAI_API_KEY')
+slack_app_token = os.getenv('SLACK_BOT_APP_TOKEN')
+slack_bot_token = os.getenv('SLACK_API_KEY')
 # Optional Environment variables
-openai_engine = os.environ.get('OPENAI_ENGINE', 'gpt-3.5-turbo')
-openai_max_tokens = int(os.environ.get('OPENAI_MAX_TOKENS', '1024'))
-openai_ack_msg = os.environ.get('OPENAI_ACK_MSG', "Hey there! :robot_face: \nI'm on it!")
-openai_reply_msg = os.environ.get('OPENAI_REPLY_MSG', "Here you go: \n")
+openai_engine = 'gpt-3.5-turbo'
+openai_max_tokens = int('1024')
+openai_ack_msg = "Hey there! :robot_face: \nI'm on it!"
+openai_reply_msg = "Here you go: \n"
 
 
 # Event API & Web API
