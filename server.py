@@ -4,8 +4,6 @@ from slack_bolt.adapter.socket_mode import SocketModeHandler
 from slack import WebClient
 from slack_bolt import App
 
-# TODO: rename .env.example
-
 # NEEDED Environment Variables 
 openai_api_key = os.environ['OPENAI_API_KEY']
 slack_app_token = os.environ['SLACK_BOT_APP_TOKEN']
