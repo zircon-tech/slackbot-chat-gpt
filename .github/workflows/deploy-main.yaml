@@ -21,7 +21,7 @@ jobs:
         aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID}}
         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
         aws_default_region: us-east-1
-        env_vars: ${{ secrets.ENV_VARS }}
+        dot_env: ${{ secrets.ENV_VARS }}
         ec2_instance_type: t2.micro
 
     - if: ${{ steps.deploy.outputs.vm_url != '' }}
