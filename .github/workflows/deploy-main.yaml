@@ -2,15 +2,13 @@ name: Deploy
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 permissions:
   contents: read
 
 jobs:
-  EC2-Deploy:
-    # if the branch name of the PR does not contain 'skip-deploy'
-    if: "!contains(github.head_ref, 'skip-deploy')"
+  ec2-deploy:
     runs-on: ubuntu-latest
     environment:
       name: ${{ github.ref_name }}
@@ -20,12 +18,11 @@ jobs:
       name: Deploy
       uses: bitovi/github-actions-deploy-docker-to-ec2@v0.4.6
       with:
-        aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID_SANDBOX}}
-        aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY_SANDBOX}}
+        aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID}}
+        aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
         aws_default_region: us-east-1
-
-        # Provide a secret called `DOT_ENV` to append environment variables to the .env file
-        dot_env: ${{ secrets.DOT_ENV_MAIN }}
+        env_vars: ${{ secrets.ENV_VARS }}
+        ec2_instance_type: t2.micro
 
     - if: ${{ steps.deploy.outputs.vm_url != '' }}
       name: Print result created
