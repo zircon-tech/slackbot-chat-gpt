@@ -1,7 +1,7 @@
 import os
 import openai
 from slack_bolt.adapter.socket_mode import SocketModeHandler
-from slack import WebClient
+from slack_sdk import WebClient
 from slack_bolt import App
 from dotenv import load_dotenv
 
