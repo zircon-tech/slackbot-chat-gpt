@@ -14,7 +14,7 @@ slack_bot_token = os.getenv('SLACK_API_KEY')
 # Optional Environment variables
 openai_engine = 'gpt-3.5-turbo'
 openai_max_tokens = int('1024')
-openai_ack_msg = "Hey there! :robot_face: \nI'm on it!"
+openai_ack_msg = "Hey there! :robot_face: I'm on it!"
 openai_reply_msg = "Here you go: \n"
 
 
