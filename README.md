@@ -4,5 +4,7 @@ SlackBot Chat GPT is a language model app that is integrated into the Zircon's S
 
 ### Interacting
 
-Simply use the bot by sending `@Gpt Z` + *your question* in any private or public channel. The bot will take a few seconds and give you the answer you are looking for (hopefully) 😎
+The bot is only configured to work properly in public and private channels but not in DMs or multi-person chats. It becomes easier when you want to post a question to a common group interest. Nonetheless if you'd like to keep questions private you can eventually create a private channel for yourself and ask there.
+
+To trigger the Bot simply send `@Gpt Z` + *your question* in any private or public channel. The bot will take a few seconds and give you the answer you are looking for (hopefully) 😎
 
