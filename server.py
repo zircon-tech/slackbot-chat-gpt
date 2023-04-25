@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 # NEEDED Environment Variables
 openai_api_key = os.getenv('OPENAI_API_KEY')
 slack_app_token = os.getenv('SLACK_BOT_APP_TOKEN')
